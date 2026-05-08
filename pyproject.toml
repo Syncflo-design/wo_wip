@@ -3,9 +3,8 @@ name = "wo_wip"
 authors = [
     { name = "NestERP / Manifold SA" }
 ]
-description = "Works Order WIP operator screen"
+description = "Works Order WIP operator screen for shop floor"
 requires-python = ">=3.10"
-readme = "README.md"
 dynamic = ["version"]
 
 [build-system]
