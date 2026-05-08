@@ -1,2 +1,0 @@
-include wo_wip/templates/*.html
-recursive-include wo_wip *.json *.js *.css *.html *.py

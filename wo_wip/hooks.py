@@ -2,23 +2,29 @@ app_name        = "wo_wip"
 app_title       = "WO WIP"
 app_publisher   = "NestERP / Manifold SA"
 app_description = "Works Order WIP operator screen for shop floor"
-app_version     = "1.0.0"
+app_email       = "ops@syncflo.co.za"
+app_license     = "MIT"
 app_icon        = "octicon octicon-pulse"
-app_color       = "#1F4E79"
 
-# Role home page
+# -------------------------------------------------------------
+# Lifecycle hooks - bootstrap the custom "Warehouse Operator"
+# role on first install and re-assert on every migrate.
+# -------------------------------------------------------------
+before_install = "wo_wip.install.before_install"
+after_migrate  = "wo_wip.install.after_migrate"
+
+# -------------------------------------------------------------
+# Role-based home pages - operators land on the WIP page.
+# -------------------------------------------------------------
 role_home_page = {
     "Manufacturing User": "wo-wip",
     "Warehouse Operator": "wo-wip",
 }
 
-# Fixtures — export workspace with this module
+# -------------------------------------------------------------
+# Fixtures - export this app's Workspace only. DocTypes ship
+# via JSON in their doctype/ folders, not as fixtures.
+# -------------------------------------------------------------
 fixtures = [
     {"doctype": "Workspace", "filters": [["module", "=", "WO WIP"]]},
-    {"doctype": "Custom DocType", "filters": [["module", "=", "WO WIP"]]},
 ]
-
-# DocTypes defined in this app
-override_doctype_class = {}
-
-doc_events = {}

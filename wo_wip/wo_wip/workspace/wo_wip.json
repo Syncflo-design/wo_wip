@@ -1,49 +1,114 @@
 {
-  "doctype": "Workspace",
-  "name": "WO WIP",
-  "label": "WO WIP",
-  "module": "WO WIP",
-  "icon": "pulse",
-  "color": "#1F4E79",
-  "is_standard": 1,
-  "roles": [
-    { "role": "Warehouse Operator" },
-    { "role": "Manufacturing User" },
-    { "role": "Manufacturing Manager" }
-  ],
-  "shortcuts": [
-    {
-      "type": "Page",
-      "label": "Works Order - WIP",
-      "link_to": "wo-wip",
-      "icon": "pulse",
-      "color": "#1F4E79",
-      "description": "Operator WIP screen for active work orders"
-    },
-    {
-      "type": "DocType",
-      "label": "Operator Sessions",
-      "link_to": "WO Operator Session",
-      "icon": "list",
-      "color": "#2E75B6"
-    },
-    {
-      "type": "DocType",
-      "label": "Work Orders",
-      "link_to": "Work Order",
-      "icon": "manufacturing",
-      "color": "#2E75B6"
-    }
-  ],
-  "cards": [
-    {
-      "label": "WIP",
-      "links": [
-        { "type": "Page",    "label": "Works Order - WIP",  "link_to": "wo-wip" },
-        { "type": "DocType", "label": "Operator Sessions",  "link_to": "WO Operator Session" },
-        { "type": "DocType", "label": "Work Orders",        "link_to": "Work Order" },
-        { "type": "DocType", "label": "Quality Inspections","link_to": "Quality Inspection" }
-      ]
-    }
-  ]
+ "charts": [],
+ "content": "[{\"id\": \"hdr-shortcuts\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\", \"col\": 12}}, {\"id\": \"sc-wo-wip\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Works Order - WIP\", \"col\": 4}}, {\"id\": \"sc-sessions\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Operator Sessions\", \"col\": 4}}, {\"id\": \"sc-work-orders\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Work Orders\", \"col\": 4}}, {\"id\": \"hdr-reports\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\", \"col\": 12}}, {\"id\": \"card-wip\", \"type\": \"card\", \"data\": {\"card_name\": \"WIP\", \"col\": 4}}]",
+ "creation": "2026-05-08 00:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "pulse",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "WO WIP",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "WIP",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Works Order - WIP",
+   "link_count": 0,
+   "link_to": "wo-wip",
+   "link_type": "Page",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Operator Sessions",
+   "link_count": 0,
+   "link_to": "WO Operator Session",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Work Orders",
+   "link_count": 0,
+   "link_to": "Work Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Quality Inspections",
+   "link_count": 0,
+   "link_to": "Quality Inspection",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-05-08 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "WO WIP",
+ "name": "WO WIP",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Warehouse Operator"
+  },
+  {
+   "role": "Manufacturing User"
+  },
+  {
+   "role": "Manufacturing Manager"
+  }
+ ],
+ "sequence_id": 20.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Works Order - WIP",
+   "link_to": "wo-wip",
+   "type": "Page"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Operator Sessions",
+   "link_to": "WO Operator Session",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "Work Orders",
+   "link_to": "Work Order",
+   "type": "DocType"
+  }
+ ],
+ "title": "WO WIP",
+ "type": "Workspace"
 }
