@@ -1,0 +1,191 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "WOS-.YYYY.-.#####",
+  "creation": "2026-05-08 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "work_order",
+    "item_name",
+    "col_break_1",
+    "session_status",
+    "operator",
+    "section_timing",
+    "accept_time",
+    "col_break_2",
+    "close_time",
+    "section_output",
+    "produced_qty",
+    "col_break_3",
+    "reject_count",
+    "section_rm",
+    "rm_returns",
+    "section_notes",
+    "activity_notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "work_order",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Work Order",
+      "options": "Work Order",
+      "reqd": 1,
+      "search_index": 1
+    },
+    {
+      "fetch_from": "work_order.item_name",
+      "fieldname": "item_name",
+      "fieldtype": "Data",
+      "label": "Item Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "col_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "session_status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Status",
+      "options": "Open\nClosed - Handover\nClosed - Run Complete",
+      "reqd": 1,
+      "default": "Open"
+    },
+    {
+      "fieldname": "operator",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Operator",
+      "options": "User",
+      "reqd": 1
+    },
+    {
+      "fieldname": "section_timing",
+      "fieldtype": "Section Break",
+      "label": "Timing"
+    },
+    {
+      "fieldname": "accept_time",
+      "fieldtype": "Datetime",
+      "label": "Accept Time",
+      "reqd": 1
+    },
+    {
+      "fieldname": "col_break_2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "close_time",
+      "fieldtype": "Datetime",
+      "label": "Close Time"
+    },
+    {
+      "fieldname": "section_output",
+      "fieldtype": "Section Break",
+      "label": "Output"
+    },
+    {
+      "fieldname": "produced_qty",
+      "fieldtype": "Float",
+      "in_list_view": 1,
+      "label": "Produced Qty",
+      "default": "0"
+    },
+    {
+      "fieldname": "col_break_3",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "reject_count",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Reject Count",
+      "default": "0"
+    },
+    {
+      "fieldname": "section_rm",
+      "fieldtype": "Section Break",
+      "label": "RM Returns"
+    },
+    {
+      "fieldname": "rm_returns",
+      "fieldtype": "Table",
+      "label": "RM Returns",
+      "options": "WO Session RM Return"
+    },
+    {
+      "fieldname": "section_notes",
+      "fieldtype": "Section Break",
+      "label": "Activity Notes"
+    },
+    {
+      "fieldname": "activity_notes",
+      "fieldtype": "Text Editor",
+      "label": "Activity Notes"
+    }
+  ],
+  "links": [],
+  "modified": "2026-05-08 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "WO WIP",
+  "name": "WO Operator Session",
+  "naming_rule": "Expression (old style)",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 0,
+      "read": 1,
+      "report": 1,
+      "role": "Manufacturing User",
+      "share": 0,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "email": 0,
+      "export": 0,
+      "print": 0,
+      "read": 1,
+      "report": 1,
+      "role": "Warehouse Operator",
+      "share": 0,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Manufacturing Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "title_field": "work_order",
+  "track_changes": 1
+}

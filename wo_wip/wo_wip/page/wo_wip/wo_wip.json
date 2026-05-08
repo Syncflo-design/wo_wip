@@ -1,0 +1,16 @@
+{
+  "creation": "2026-05-08 00:00:00",
+  "doctype": "Page",
+  "icon": "octicon octicon-pulse",
+  "module": "WO WIP",
+  "name": "wo-wip",
+  "page_name": "wo-wip",
+  "roles": [
+    { "role": "Warehouse Operator" },
+    { "role": "Manufacturing Manager" },
+    { "role": "Manufacturing User" },
+    { "role": "System Manager" }
+  ],
+  "standard": "Yes",
+  "title": "Works Order - WIP"
+}

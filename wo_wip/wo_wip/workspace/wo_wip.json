@@ -1,0 +1,49 @@
+{
+  "doctype": "Workspace",
+  "name": "WO WIP",
+  "label": "WO WIP",
+  "module": "WO WIP",
+  "icon": "pulse",
+  "color": "#1F4E79",
+  "is_standard": 1,
+  "roles": [
+    { "role": "Warehouse Operator" },
+    { "role": "Manufacturing User" },
+    { "role": "Manufacturing Manager" }
+  ],
+  "shortcuts": [
+    {
+      "type": "Page",
+      "label": "Works Order - WIP",
+      "link_to": "wo-wip",
+      "icon": "pulse",
+      "color": "#1F4E79",
+      "description": "Operator WIP screen for active work orders"
+    },
+    {
+      "type": "DocType",
+      "label": "Operator Sessions",
+      "link_to": "WO Operator Session",
+      "icon": "list",
+      "color": "#2E75B6"
+    },
+    {
+      "type": "DocType",
+      "label": "Work Orders",
+      "link_to": "Work Order",
+      "icon": "manufacturing",
+      "color": "#2E75B6"
+    }
+  ],
+  "cards": [
+    {
+      "label": "WIP",
+      "links": [
+        { "type": "Page",    "label": "Works Order - WIP",  "link_to": "wo-wip" },
+        { "type": "DocType", "label": "Operator Sessions",  "link_to": "WO Operator Session" },
+        { "type": "DocType", "label": "Work Orders",        "link_to": "Work Order" },
+        { "type": "DocType", "label": "Quality Inspections","link_to": "Quality Inspection" }
+      ]
+    }
+  ]
+}
