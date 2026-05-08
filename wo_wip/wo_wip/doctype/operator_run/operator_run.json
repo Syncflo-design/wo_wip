@@ -1,7 +1,7 @@
 {
   "actions": [],
   "allow_rename": 0,
-  "autoname": "WOS-.YYYY.-.#####",
+  "autoname": "OR-.YYYY.-.#####",
   "creation": "2026-05-08 00:00:00.000000",
   "doctype": "DocType",
   "engine": "InnoDB",
@@ -114,7 +114,7 @@
       "fieldname": "rm_returns",
       "fieldtype": "Table",
       "label": "RM Returns",
-      "options": "WO Session RM Return"
+      "options": "Operator Run RM Return"
     },
     {
       "fieldname": "section_notes",
@@ -131,7 +131,7 @@
   "modified": "2026-05-08 00:00:00.000000",
   "modified_by": "Administrator",
   "module": "WO WIP",
-  "name": "WO Operator Session",
+  "name": "Operator Run",
   "naming_rule": "Expression (old style)",
   "owner": "Administrator",
   "permissions": [

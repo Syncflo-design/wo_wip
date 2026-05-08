@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\": \"hdr-shortcuts\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\", \"col\": 12}}, {\"id\": \"sc-wo-wip\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Works Order - WIP\", \"col\": 4}}, {\"id\": \"sc-sessions\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Operator Sessions\", \"col\": 4}}, {\"id\": \"sc-work-orders\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Work Orders\", \"col\": 4}}, {\"id\": \"hdr-reports\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\", \"col\": 12}}, {\"id\": \"card-wip\", \"type\": \"card\", \"data\": {\"card_name\": \"WIP\", \"col\": 4}}]",
+ "content": "[{\"id\": \"hdr-shortcuts\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Shortcuts</b></span>\", \"col\": 12}}, {\"id\": \"sc-wo-wip\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Works Order - WIP\", \"col\": 4}}, {\"id\": \"sc-sessions\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Operator Runs\", \"col\": 4}}, {\"id\": \"sc-work-orders\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Work Orders\", \"col\": 4}}, {\"id\": \"hdr-reports\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Reports & Masters</b></span>\", \"col\": 12}}, {\"id\": \"card-wip\", \"type\": \"card\", \"data\": {\"card_name\": \"WIP\", \"col\": 4}}]",
  "creation": "2026-05-08 00:00:00.000000",
  "custom_blocks": [],
  "docstatus": 0,
@@ -35,9 +35,9 @@
    "dependencies": "",
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Operator Sessions",
+   "label": "Operator Runs",
    "link_count": 0,
-   "link_to": "WO Operator Session",
+   "link_to": "Operator Run",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -97,8 +97,8 @@
   {
    "color": "Blue",
    "doc_view": "",
-   "label": "Operator Sessions",
-   "link_to": "WO Operator Session",
+   "label": "Operator Runs",
+   "link_to": "Operator Run",
    "type": "DocType"
   },
   {

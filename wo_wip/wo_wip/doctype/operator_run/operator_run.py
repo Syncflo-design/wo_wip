@@ -6,7 +6,7 @@ from frappe.model.document import Document
 from frappe.utils import now_datetime
 
 
-class WOOperatorSession(Document):
+class OperatorRun(Document):
 
     def validate(self):
         if not self.accept_time:

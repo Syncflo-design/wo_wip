@@ -191,7 +191,33 @@ class WOWipPage {
         // Refresh button in header
         page.set_secondary_action("Refresh", () => this.render(), "refresh");
 
+        // Deep-link from Work Order form: frappe.route_options = { wo: "MFG-WO-..." }
+        // → land directly in that WO's detail view instead of the list.
+        const route_options = frappe.route_options || {};
+        if (route_options.wo) {
+            const wo_name = route_options.wo;
+            frappe.route_options = null; // consume so a later render() doesn't re-trigger
+            this.deepLinkToWO(wo_name);
+            return;
+        }
+
         this.render();
+    }
+
+    async deepLinkToWO(wo_name) {
+        this.container.innerHTML = `<div class="ww-loader"><div class="ww-spinner"></div><div>Loading work order…</div></div>`;
+        try {
+            const woRes = await frappe.call({
+                method: "frappe.client.get",
+                args: { doctype: "Work Order", name: wo_name },
+            });
+            const wo = woRes.message;
+            if (!wo) throw new Error(`Work order ${wo_name} not found`);
+            await this.loadDetailData(wo);
+            this.goDetail(wo);
+        } catch (e) {
+            this.container.innerHTML = `<div class="ww-empty">⚠️ Could not open ${frappe.utils.escape_html(wo_name)}.<br><small>${e.message || e}</small></div>`;
+        }
     }
 
     /* ── Routing ── */
@@ -285,7 +311,7 @@ class WOWipPage {
             frappe.call({
                 method: "frappe.client.get_list",
                 args: {
-                    doctype: "WO Operator Session",
+                    doctype: "Operator Run",
                     filters: [["work_order", "=", wo.name]],
                     fields: [
                         "name", "operator", "session_status",
@@ -431,7 +457,7 @@ class WOWipPage {
                         method: "frappe.client.insert",
                         args: {
                             doc: {
-                                doctype:        "WO Operator Session",
+                                doctype:        "Operator Run",
                                 work_order:     wo.name,
                                 operator:       frappe.session.user,
                                 session_status: "Open",
@@ -559,7 +585,7 @@ class WOWipPage {
                 await frappe.call({
                     method: "frappe.client.set_value",
                     args: {
-                        doctype:   "WO Operator Session",
+                        doctype:   "Operator Run",
                         name:      session.name,
                         fieldname: {
                             session_status: newStatus,
@@ -575,7 +601,7 @@ class WOWipPage {
                 if (rmReturns.length > 0) {
                     const sessDoc = await frappe.call({
                         method: "frappe.client.get",
-                        args: { doctype: "WO Operator Session", name: session.name }
+                        args: { doctype: "Operator Run", name: session.name }
                     });
                     if (sessDoc.message) {
                         sessDoc.message.rm_returns = rmReturns;
@@ -614,7 +640,7 @@ class WOWipPage {
     }
 }
 
-/* helper — safe float formatting */
+/* helper - safe float formatting */
 function flt(val, decimals) {
     const n = parseFloat(val) || 0;
     return decimals === 0 ? Math.round(n).toLocaleString() : n.toFixed(decimals);

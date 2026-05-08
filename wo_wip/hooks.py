@@ -22,6 +22,15 @@ role_home_page = {
 }
 
 # -------------------------------------------------------------
+# Form-script extensions on standard ERPNext doctypes.
+# Adds the Start-Session and Open-WIP-Screen buttons to the
+# Work Order form (Production Planner + Operator workflows).
+# -------------------------------------------------------------
+doctype_js = {
+    "Work Order": "public/js/work_order_extensions.js",
+}
+
+# -------------------------------------------------------------
 # Fixtures - export this app's Workspace only. DocTypes ship
 # via JSON in their doctype/ folders, not as fixtures.
 # -------------------------------------------------------------
