@@ -186,7 +186,10 @@ class WOWipPage {
 
         this.container = document.createElement("div");
         this.container.className = "ww-wrap";
-        wrapper.main.appendChild(this.container);
+        // Frappe v16: page.body is the canonical page content mount point.
+        // (v15's wrapper.main was dropped in the modern desk.)
+        const mountTarget = (page && page.body) || (wrapper && wrapper.main) || wrapper;
+        mountTarget.appendChild(this.container);
 
         // Refresh button in header
         page.set_secondary_action("Refresh", () => this.render(), "refresh");
