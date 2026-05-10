@@ -256,8 +256,13 @@ class WOWipPage {
                 args: {
                     doctype: "Work Order",
                     filters: [["status", "in", ["Not Started", "In Process"]]],
+                    // NOTE: do NOT request "item_code" here — Frappe v16
+                    // tightened frappe.client.get_list field permissions and
+                    // throws "Field not permitted in query: item_code" for
+                    // most users. item_name is always populated on Work Order
+                    // and is what we display, so it's enough.
                     fields: [
-                        "name", "item_name", "item_code", "status",
+                        "name", "item_name", "status",
                         "qty", "produced_qty", "expected_delivery_date",
                         "planned_start_date"
                     ],
